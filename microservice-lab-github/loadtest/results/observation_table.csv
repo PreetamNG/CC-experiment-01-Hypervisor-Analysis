@@ -1,0 +1,6 @@
+Concurrency,Avg Response Time (s),Throughput (req/s),Failed,API Gateway CPU %,API Gateway Memory (MiB),Student Service CPU %,Student Service Memory (MiB),Course Service CPU %,Course Service Memory (MiB)
+1,0.0342,29.03,0,0.02,25.98,0.02,22.07,0.02,21.77
+2,0.0264,74.13,0,0.02,26.07,0.02,22.05,0.02,21.77
+4,0.0278,128.13,0,0.02,26.0,0.02,22.04,0.02,21.78
+8,0.0481,149.74,0,0.01,26.05,0.02,22.05,0.01,21.76
+16,0.1204,91.98,0,0.02,26.05,0.02,22.05,0.02,21.79

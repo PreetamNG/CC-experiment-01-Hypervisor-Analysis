@@ -1,0 +1,34 @@
+services:
+  student-service:
+    image: student-service:v1
+    container_name: student-service
+    ports:
+      - "5001:5001"
+    networks:
+      - microservice-network
+
+  course-service:
+    image: course-service:v1
+    container_name: course-service
+    ports:
+      - "5002:5002"
+    networks:
+      - microservice-network
+
+  api-gateway:
+    image: api-gateway:v1
+    container_name: api-gateway
+    ports:
+      - "5000:5000"
+    environment:
+      STUDENT_SERVICE_URL: http://student-service:5001
+      COURSE_SERVICE_URL: http://course-service:5002
+    depends_on:
+      - student-service
+      - course-service
+    networks:
+      - microservice-network
+
+networks:
+  microservice-network:
+    driver: bridge
